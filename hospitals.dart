@@ -19,23 +19,21 @@ addpatient() {
     String? diesease = stdin.readLineSync();
     print("select a doctors by number 1,2,3");
     int count = 1;
-     for (var air in doctors) {
+    for (var air in doctors) {
       print("$count $air");
-      count=count+1;
+      count = count + 1;
     }
     String? Enter = stdin.readLineSync().toString();
     if (Enter == "1") {
       docname = doctors[0];
     } else if (Enter == "2") {
       docname = doctors[1];
-    } else {
+    } else if (Enter == "3") {
       docname = doctors[2];
+    } else {
+      docname = "";
     }
-    a.add({
-      "name": name,
-      "diesease": diesease,
-      "doctorname" : docname
-    });
+    a.add({"name": name, "diesease": diesease, "doctorname": docname});
   }
   return a;
 }
